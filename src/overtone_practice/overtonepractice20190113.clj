@@ -7,6 +7,5 @@
   ;;(definst bloop [] (-> (lf-noise0 12) (* 600) (+ 1000) (sin-osc 0.3))
   
   ;;SCBOOK Pg 5
-  ;;(definst bloop [] (rlpf (dust 12) (+ (* (lf-noise0 4) 1500) 1600) 0.02))
-  (definst bloop [] (rlpf (dust 12) (-> (lf-noise0 4) (* 1500) (+ 1600)) 0.02))
+  (definst bloop [] (out 0 (rlpf (dust [12 15]) (-> (lf-noise0 [0.33 0.25]) (* 1500) (+ 1600)) 0.02)))
   (bloop))
